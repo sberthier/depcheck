@@ -19,6 +19,7 @@
     "compile": "babel src/ -d dist/",
     "depcheck": "node ./bin/depcheck.js --ignore-dirs=fake_modules",
     "depcheck-json": "node ./bin/depcheck.js --ignore-dirs=fake_modules --json | node -r @babel/register ./build/check-json",
+    "prepare": "npm run compile && npm run component",
     "prepublishOnly": "npm run compile && npm run component",
     "prettier": "prettier \"**/*.@(js|json|md|yml)\"",
     "prettier-check": "npm run prettier -- --check",
